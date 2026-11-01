@@ -27,14 +27,33 @@ export const predictFloodRisk = asyncHandler(async (req, res) => {
   }
 
   const features = {
-    rainfall:    rainfall    ?? liveData.rainfall    ?? 0,
-    humidity:    liveData.humidity                   ?? 60,
-    riverLevel:  riverLevel  ?? liveData.riverLevel  ?? 0,
-    elevation:   elevation   ?? liveData.elevation   ?? 0,
-    temperature: liveData.temperature                ?? 25,
+    rainfall: rainfall ?? liveData.rainfall ?? 0,
+    humidity: liveData.humidity ?? 60,
+    riverLevel: riverLevel ?? liveData.riverLevel ?? 0,
+    elevation: elevation ?? liveData.elevation ?? 0,
+    temperature: liveData.temperature ?? 25,
   };
 
-  const result = await predictFlood(features);
+  let result;
+
+  try {
+    console.log("Flood features:", features);
+    console.log("ML API URL:", process.env.ML_API_URL);
+
+    result = await predictFlood(features);
+
+    console.log("ML prediction result:", result);
+  } catch (error) {
+    console.error("Flood ML Error:", error.message);
+    console.error("ML Response:", error.response?.data);
+    console.error("ML Status:", error.response?.status);
+
+    return res.status(502).json({
+      success: false,
+      message: "Flood prediction service failed",
+      error: error.response?.data || error.message,
+    });
+  }
 
   const prediction = await Prediction.create({
     type: "flood",
