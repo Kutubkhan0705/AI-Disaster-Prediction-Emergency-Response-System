@@ -33,7 +33,15 @@ const io = new Server(server, {
 app.set("io", io);
 
 // ---- Middleware ----
-app.use(cors({ origin: process.env.CLIENT_URL || "*" }));
+const allowedOrigins = [
+  "https://ai-disaster-prediction-emergency-re-ten.vercel.app",
+  "https://ai-disaster-prediction-emergency-response-system-npx0l6i7b.vercel.app"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 
