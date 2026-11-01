@@ -1,0 +1,364 @@
+/* ================================
+   Register Page
+================================ */
+
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #06111f,
+    #0a1d2e,
+    #071827
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 40px 15px;
+}
+
+
+/* ================================
+   Background Circles
+================================ */
+
+.register-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.25;
+}
+
+.circle-one {
+  width: 350px;
+  height: 350px;
+
+  background: #00d9ff;
+
+  top: -150px;
+  left: -120px;
+}
+
+.circle-two {
+  width: 300px;
+  height: 300px;
+
+  background: #0077ff;
+
+  bottom: -130px;
+  right: -100px;
+}
+
+
+/* ================================
+   Container
+================================ */
+
+.register-container {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ================================
+   Card
+================================ */
+
+.register-card {
+  width: 100%;
+  max-width: 500px;
+
+  background: rgba(10, 29, 46, 0.92) !important;
+
+  border: 1px solid rgba(0, 217, 255, 0.2) !important;
+
+  border-radius: 20px !important;
+
+  padding: 20px;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(0, 217, 255, 0.08);
+}
+
+
+/* ================================
+   Header
+================================ */
+
+.register-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 217, 255, 0.1);
+
+  border: 1px solid rgba(0, 217, 255, 0.4);
+
+  color: #00d9ff;
+
+  font-size: 28px;
+
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.15);
+}
+
+.register-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+
+  margin-bottom: 7px;
+
+  color: #ffffff;
+}
+
+.register-header p {
+  margin: 0;
+
+  color: #9fb3c8;
+
+  font-size: 14px;
+}
+
+.register-header p span {
+  color: #00d9ff;
+  font-weight: 600;
+}
+
+
+/* ================================
+   Form
+================================ */
+
+.register-form-group {
+  margin-bottom: 18px;
+}
+
+.register-form-group label {
+  color: #dce8f2;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  margin-bottom: 7px;
+}
+
+
+/* ================================
+   Input
+================================ */
+
+.register-input-wrapper {
+  position: relative;
+}
+
+.register-input-icon {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #00d9ff;
+
+  font-size: 15px;
+
+  z-index: 3;
+}
+
+.register-input-wrapper .form-control {
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  min-height: 46px;
+
+  padding-left: 42px;
+
+  transition: all 0.3s ease;
+}
+
+.register-input-wrapper .form-control::placeholder {
+  color: #71869a;
+}
+
+.register-input-wrapper .form-control:focus {
+  background: rgba(255, 255, 255, 0.07);
+
+  border-color: #00d9ff;
+
+  color: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+}
+
+
+/* ================================
+   Password Hint
+================================ */
+
+.password-hint {
+  color: #71869a;
+
+  font-size: 12px;
+
+  margin-top: 5px;
+
+  display: block;
+}
+
+
+/* ================================
+   Error Alert
+================================ */
+
+.register-alert {
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+/* ================================
+   Register Button
+================================ */
+
+.register-btn {
+  min-height: 48px;
+
+  border: none !important;
+
+  border-radius: 10px !important;
+
+  background: linear-gradient(
+    135deg,
+    #00c6ff,
+    #0072ff
+  ) !important;
+
+  color: #ffffff !important;
+
+  font-weight: 600;
+
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.25);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 217, 255, 0.25);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+
+  transform: none;
+}
+
+
+/* ================================
+   Login Link
+================================ */
+
+.register-login {
+  text-align: center;
+
+  margin-top: 22px;
+
+  color: #8fa4b8;
+
+  font-size: 14px;
+}
+
+.register-login a {
+  color: #00d9ff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.register-login a:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 576px) {
+
+  .register-page {
+    padding: 25px 12px;
+  }
+
+  .register-card {
+    padding: 15px !important;
+
+    border-radius: 16px !important;
+  }
+
+  .register-header h2 {
+    font-size: 24px;
+  }
+
+  .register-icon {
+    width: 55px;
+    height: 55px;
+
+    font-size: 23px;
+  }
+
+  .circle-one {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-two {
+    width: 220px;
+    height: 220px;
+  }
+}

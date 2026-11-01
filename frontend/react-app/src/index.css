@@ -1,0 +1,167 @@
+/* ==============================
+   THEME VARIABLES
+================================= */
+
+:root, [data-theme="light"] {
+  --bg-main: #f4f7fb;
+  --bg-card: #ffffff;
+  --bg-navbar: #0d6efd;
+  --bg-input: #ffffff;
+  --bg-header: linear-gradient(135deg, #0d6efd, #0b3d91);
+  --bg-alerts-box: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #6c757d;
+  --text-nav: #ffffff;
+  --border-color: #dee2e6;
+  --card-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  --card-shadow-hover: 0 15px 35px rgba(0,0,0,0.13);
+  --input-border: #ced4da;
+  --chatbot-bg: #ffffff;
+  --chatbot-body: #f8f9fa;
+  --chatbot-bot-msg: #e9ecef;
+  --chatbot-bot-text: #212529;
+}
+
+[data-theme="dark"] {
+  --bg-main: #0d1117;
+  --bg-card: #161b22;
+  --bg-navbar: #010409;
+  --bg-input: #0d1117;
+  --bg-header: linear-gradient(135deg, #1f6feb, #0d419d);
+  --bg-alerts-box: #161b22;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #8b949e;
+  --text-nav: #e6edf3;
+  --border-color: #30363d;
+  --card-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  --card-shadow-hover: 0 15px 35px rgba(0,0,0,0.6);
+  --input-border: #30363d;
+  --chatbot-bg: #161b22;
+  --chatbot-body: #0d1117;
+  --chatbot-bot-msg: #21262d;
+  --chatbot-bot-text: #e6edf3;
+}
+
+/* ==============================
+   GLOBAL
+================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==============================
+   CARDS
+================================= */
+
+.card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover) !important;
+}
+
+.card-text, .card-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+/* ==============================
+   FORM CONTROLS
+================================= */
+
+.form-control, .form-select {
+  background-color: var(--bg-input) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--input-border) !important;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder { color: var(--text-muted) !important; }
+.form-control:focus {
+  background-color: var(--bg-input) !important;
+  color: var(--text-primary) !important;
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.15) !important;
+}
+
+.form-label { color: var(--text-primary) !important; }
+
+/* ==============================
+   LIST GROUP
+================================= */
+
+.list-group-item {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.list-group-item:hover {
+  background-color: var(--bg-main) !important;
+}
+
+/* ==============================
+   NAVBAR
+================================= */
+
+.navbar {
+  background-color: var(--bg-navbar) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* ==============================
+   SEVERITY BADGES
+================================= */
+
+.severity-critical { background-color: #dc3545 !important; }
+.severity-high { background-color: #fd7e14 !important; }
+.severity-moderate, .severity-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+.severity-low, .severity-info {
+  background-color: #0dcaf0 !important;
+  color: #212529 !important;
+}
+
+/* ==============================
+   CARD HOVER
+================================= */
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* ==============================
+   TEXT HELPERS
+================================= */
+
+.text-muted { color: var(--text-muted) !important; }
+
+/* ==============================
+   ALERT (bootstrap)
+================================= */
+
+.alert-danger {
+  background-color: rgba(220,53,69,0.15) !important;
+  border-color: rgba(220,53,69,0.3) !important;
+  color: #f8d7da !important;
+}
+
+[data-theme="light"] .alert-danger {
+  background-color: #f8d7da !important;
+  border-color: #f5c2c7 !important;
+  color: #842029 !important;
+}
