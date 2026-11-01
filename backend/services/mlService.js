@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const ML_API_URL = process.env.ML_API_URL || "http://localhost:8000";
+const ML_API_URL =
+  import.meta.env.VITE_ML_API_URL || "http://localhost:8000";
 
 // Calls the Python FastAPI ML microservice (ml/api/main.py)
 export const predictFlood = async (features) => {
